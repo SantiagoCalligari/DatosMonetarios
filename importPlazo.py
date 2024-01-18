@@ -3,7 +3,7 @@ import mysql.connector
 
 
 mydb = mysql.connector.connect(
-    host="localhost", user="root", password="", database="Data"
+    host="localhost", user="isoroc", password="muriel", database="DatosMonetarios"
 )
 
 
@@ -37,9 +37,9 @@ def separar_fecha(fecha):
     return (año, mes)
 
 
-df = pd.read_csv("data.csv", usecols=["fecha", "tasa"])
+df = pd.read_csv("PlazoFijo.csv", usecols=["fecha", "tasa"])
 first = True
-acumulado = 100
+acumulado = 6000
 
 mycursor = mydb.cursor()
 for row in df.iterrows():
